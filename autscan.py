@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
 import nmap
-import signal, time, sys
+import signal, time, sys, os
 
 banner = """
-
  █████╗ ██╗   ██╗████████╗███████╗ ██████╗ █████╗ ███╗   ██╗
 ██╔══██╗██║   ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗████╗  ██║
 ███████║██║   ██║   ██║   ███████╗██║     ███████║██╔██╗ ██║
@@ -12,12 +11,14 @@ banner = """
 ██║  ██║╚██████╔╝   ██║   ███████║╚██████╗██║  ██║██║ ╚████║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
 Author : Erick Garcia Mendez
-Github : Github.com/Zackk03                                                            
+Github : github.com/Zackk03                                                            
 """
-
+#=-=-=-=-=-=[banner]=-=-=-=-=-=-=-
+os.system("clear")
+os.system("cls")
 print(banner)
 
-#=-=-=-=-[Control + C]=-=-=-=-=-=
+#=-=-=-=-[handle function]=-=-=-=-=-=
 def handle(sig, frame):
 	print("\n\n[!] Saliendo...\n")
 	sys.exit(1)
@@ -50,13 +51,16 @@ def mainfunction():
 			else:
 				puertos_abiertos=puertos_abiertos+","+str(port)
 
+	#=-=-=-=-==-=-=-=-=-=-=[Impresion de los resultado]=-=-=-=-=-=-=-=-=-=
 	print("\nPuertos abiertos : "+ puertos_abiertos +" "+str(host))
 	print("\n\n[!] Escaneo completado...\n[!] Iniciando escaneo de Puertos...\n\n")
 	
+
 	#=-=-=-=-=-==-=-=-=[Segundo Escaneo]=-=-=-=-==-=-=-=-=--=   
 	results2 = nm.scan(hosts=host,arguments=f"{puertos_abiertos} -sC -sV -T5 -n -Pn -oN PortScan.txt")
 	print("\n\n[!] Escaneo Finalizado...")
 	time.sleep(2)
 
+#=-=-=-=-[init]=-=-=-=-=-=
 if __name__=="__main__":
 	mainfunction()                       
