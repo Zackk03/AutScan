@@ -8,4 +8,4 @@ Esta es una herramienta que sirve para automatizar el proceso de escaneo de puer
 
 ✅ Si no tiene el módulo `pip`, lo puede instalar usando el comando `sudo apt-get install pip*`.
 
-✅ Si le da el problema del módulo `nmap`, escriban `pip3 uninstall nmap`, `pip uninstall nmap`, `pip3 uninstall python-nmap`, `pip uninstall python-nmap`. Es decir desinstalar los módulo de todas las versiones de pip y volverlo a instalar con los mismos comandos pero sustitutyendo `uninstall` por `install`.
+✅ Si le da el problema del módulo `nmap`, intenten con el comando `pip3 uninstall nmap`, `pip uninstall nmap`, `pip3 uninstall python-nmap`, `pip uninstall python-nmap`. Es decir desinstalar los módulo de todas las versiones de pip y volverlo a instalar con los mismos comandos pero sustitutyendo `uninstall` por `install`.
